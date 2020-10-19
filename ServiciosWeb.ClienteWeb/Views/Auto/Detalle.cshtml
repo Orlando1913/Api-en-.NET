@@ -1,0 +1,24 @@
+﻿@model Auto
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle del Auto</h2>
+<hr />
+<form class="form-group-lg" method="get" action="@Url.Action("Detalle","Auto")"> 
+    <div class="form-group">
+        <label>Nombre</label>
+        @Model.Nombre
+    </div>
+    <div class="form-group">
+        <label>Modelo</label>
+        @Model.Modelo
+    </div>
+    <div class="form-group">
+        <label>Imagen</label>
+        @Model.Imagen
+    </div>
+    <div class="form-group">
+        <a href="@Url.Action("Index","Auto")" class="btn btn-primary">Regresar</a>
+    </div>
+</form>

@@ -1,0 +1,40 @@
+﻿@model List<Auto>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>
+        Listado de Autos
+        <a href="@Url.Action("Nuevo","Auto")" class="btn btn-primary right">Nuevo</a>
+    </h2>
+<hr />
+
+
+
+<table class="table table-sm table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var auto in Model)
+        {
+            <tr>
+                <td>@auto.Id</td>
+                <td>@auto.Nombre</td>
+                <td>
+                    <a href="@Url.Action("Actualizar","Auto", new { id =auto.Id})" class="btn btn-success right">Actualizar</a>
+                    <a href="@Url.Action("Detalle","Auto", new { id =auto.Id})" class="btn btn-default right">Ver Detalle</a>
+                    <a href="@Url.Action("Eliminar","Auto", new { id =auto.Id})" class="btn btn-danger right">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
